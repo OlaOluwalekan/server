@@ -5,15 +5,6 @@ app.get("/", (req, res) => {
   res.send(`<h1>Home</h1>`)
 })
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:5000") // update to match the domain you will make the request from
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  )
-  next()
-})
-
 app.get("/api/users", (req, res) => {
   res.status(200).json({
     response: "success",
@@ -32,6 +23,11 @@ app.get("/api/users", (req, res) => {
         id: 3,
         name: "frank",
         age: 32,
+      },
+      {
+        id: 4,
+        name: "sam",
+        age: 15,
       },
     ],
   })

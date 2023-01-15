@@ -1,17 +1,20 @@
 const express = require("express")
 const app = express()
+const cors = require("cors")
 
-app.use(function (req, res, next) {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://server-82ny.onrender.com/api/users"
-  )
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  )
-  next()
-})
+// app.use(function (req, res, next) {
+//   res.header(
+//     "Access-Control-Allow-Origin",
+//     "https://server-82ny.onrender.com/api/users"
+//   )
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   )
+//   next()
+// })
+
+app.use(cors())
 
 app.get("/", (req, res) => {
   res.send(`<h1>Home</h1>`)
@@ -40,6 +43,16 @@ app.get("/api/users", (req, res) => {
         id: 4,
         name: "sam",
         age: 16,
+      },
+      {
+        id: 5,
+        name: "bola",
+        age: 87,
+      },
+      {
+        id: 6,
+        name: "sade",
+        age: 20,
       },
     ],
   })

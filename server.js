@@ -24,11 +24,6 @@ app.get("/api/users", (req, res) => {
         name: "frank",
         age: 32,
       },
-      {
-        id: 4,
-        name: "sam",
-        age: 15,
-      },
     ],
   })
 })
